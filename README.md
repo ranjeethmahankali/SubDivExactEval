@@ -41,6 +41,14 @@ normal vectors or tangent vectors) is returned in the form - [x1, y1,
 z1, x2, y2, z2 ...].
 ```
 
+The image below shows the results of this method, when tested on an
+extraordinary patch near the vertex of a cube (valence 3, and
+visualized in Rhinoceros 6).It shows the points and normals of the
+patch in green, and the limit surface (generated using the Subdivision
+command of Rhino) for reference in red.
+
+![testImage](testImage.png)
+
 #### Acknowledgements ####
 All thanks to Jos Stam, obviously for the original paper, but also for
 helping me with some details of this implementation.
