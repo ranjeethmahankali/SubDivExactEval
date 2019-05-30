@@ -371,7 +371,7 @@ namespace SubDivExactEval
         /// <summary>
         /// This is the method used for evaluating surfaces. This should not be used from anywhere else. Please use the other wrapper methods instead.
         /// </summary>
-        /// <param name="controlPointCoords">Array of control points has the length 2*N+8 where N is the valence of
+        /// <param name="controlPointCoords">Array of 2*N+8 control points where N is the valence of
         /// this patch, sorted in the order described in the Stam's paper. The
         /// coordinates of the control points should be packed into the flat array
         /// in the form - [x1, x2, x3, x4, ...y1, y2, y3, y4, ...z1, z2, z3, z4...]</param>
