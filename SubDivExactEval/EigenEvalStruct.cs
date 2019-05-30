@@ -369,16 +369,20 @@ namespace SubDivExactEval
         }
 
         /// <summary>
-        /// This is the internal method used for evaluating surfaces. This should not be used from anywhere else. Please use the other wrapper methods instead.
+        /// This is the method used for evaluating surfaces. This should not be used from anywhere else. Please use the other wrapper methods instead.
         /// </summary>
-        /// <param name="controlPointCoords">Its assumed that this array of control points has the length 2*N+8 where N is the valence of this patch. 
-        /// It is also assumed that the points are ordered how they are described in Jos Stam's 1998 paper. If either or both assumptions are not met, then
-        /// you may see some strange results. It is also expected that the coordinates of n control are flattened into an array in the form
-        /// [x1, x2, x3... xn, y1, y2, y3... yn, z1, z2, z3... zn]</param>
-        /// <param name="uvParams"></param>
-        /// <param name="numDerivative">If this is 1 then position is evaluated, if this is 2 then the surface normal and if its 3 then second
-        /// derivatives are evaluated.</param>
-        /// <param name="uvTolerance"></param>
+        /// <param name="controlPointCoords">Array of control points has the length 2*N+8 where N is the valence of
+        /// this patch, sorted in the order described in the Stam's paper. The
+        /// coordinates of the control points should be packed into the flat array
+        /// in the form - [x1, x2, x3, x4, ...y1, y2, y3, y4, ...z1, z2, z3, z4...]</param>
+        /// <param name="uvParams">This should be a nested array, representing the u,v coordinates of the
+        /// points to be evalutated.The inner arrays are expected to be of length 2.</param>
+        /// <param name="evalType">This enumeration tells the function what property to evaluate at the
+        /// given parameters.See the documentation of this enumeration for more details.</param>
+        /// <param name="uvTolerance">This will be used as the minimum value of u and v since the evaluation
+        /// at an extraordinary points is not possible(see the paper). If not
+        /// supplied, then the default value is used defined as a const member
+        /// variable(1e-12).</param>
         /// <returns></returns>
         public static double[] EvaluateSurface(double[] controlPointCoords, double[][] uvParams, EvaluationType evalType, double uvTolerance = MINIMUM_UV)
         {
