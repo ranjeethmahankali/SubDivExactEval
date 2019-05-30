@@ -380,7 +380,7 @@ namespace SubDivExactEval
         /// derivatives are evaluated.</param>
         /// <param name="uvTolerance"></param>
         /// <returns></returns>
-        public static double[] EvalSurfInternal(double[] controlPointCoords, double[][] uvParams, EvaluationType evalType, double uvTolerance = MINIMUM_UV)
+        public static double[] EvaluateSurface(double[] controlPointCoords, double[][] uvParams, EvaluationType evalType, double uvTolerance = MINIMUM_UV)
         {
             if (controlPointCoords.Length % 3 != 0)
             {
