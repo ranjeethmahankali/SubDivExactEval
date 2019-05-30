@@ -10,6 +10,10 @@ Series, July 1998
 
 [http://www.dgp.toronto.edu/people/stam/reality/Research/pdf/sig98.pdf](http://www.dgp.toronto.edu/people/stam/reality/Research/pdf/sig98.pdf)
 
+This implementation loads the precomputed eigen structures downloaded
+from
+[here](https://www.dgp.toronto.edu/~stam/reality/Research/SubdivEval/index.html).
+
 #### Usage ####
 This is implemented as a C# Class Library project, which when compiled
 produces a DLL. The evaluation of the limit surface patches can be
